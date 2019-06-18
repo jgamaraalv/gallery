@@ -5,6 +5,10 @@ import { bindActionCreators } from "redux";
 import ShotsActions from "../../store/ducks/shots";
 
 class Main extends Component {
+  componentDidMount() {
+    this.props.getShots();
+  }
+
   render() {
     return <Fragment>oi</Fragment>;
   }

@@ -1,13 +1,15 @@
 import { call, put } from "redux-saga/effects";
-import { push } from "connected-react-router";
 import api from "../../services/api";
 
 import ShotsActions from "../ducks/shots";
 
-export function* getShots({ login, password }) {
+export function* getShots() {
   try {
-    // TODO
+    const response = yield call(api.get, `popular_shots`);
+
+    yield put(ShotsActions.getShotsSuccess(response));
   } catch (err) {
     // TODO
+    console.log(err);
   }
 }
