@@ -1,14 +1,13 @@
 import axios from "axios";
-import store from "../store";
-import configA from "../config";
+import configFile from "../config";
 
 const api = axios.create({
   baseURL: `https://api.dribbble.com/v2/`
 });
 
 api.interceptors.request.use(config => {
-  console.log(config);
-  const token = `Bearer ${config.accessToken}`;
+  console.log(configFile.accessToken);
+  const token = `Bearer ${configFile.accessToken}`;
   const headers = { ...config.headers };
 
   if (token) {
