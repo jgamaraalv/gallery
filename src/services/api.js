@@ -6,7 +6,6 @@ const api = axios.create({
 });
 
 api.interceptors.request.use(config => {
-  console.log(configFile.accessToken);
   const token = `Bearer ${configFile.accessToken}`;
   const headers = { ...config.headers };
 

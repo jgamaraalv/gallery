@@ -5,7 +5,7 @@ import ShotsActions from "../ducks/shots";
 
 export function* getShots() {
   try {
-    const response = yield call(api.get, `popular_shots`);
+    const response = yield call(api.get, `user/shots`);
 
     yield put(ShotsActions.getShotsSuccess(response));
   } catch (err) {

@@ -13,6 +13,7 @@ const Routes = () => (
   <ConnectedRouter history={history}>
     <Switch>
       <Route path="/" exact component={Main} />
+      <Route path="/shots/:id" exact component={Main} />
     </Switch>
   </ConnectedRouter>
 );

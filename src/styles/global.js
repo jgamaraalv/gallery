@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased !important;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
+    background: #f4f4f4;
   }
 
   html {

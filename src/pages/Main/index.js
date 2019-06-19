@@ -1,8 +1,11 @@
-import React, { Component, Fragment } from "react";
-
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+
 import ShotsActions from "../../store/ducks/shots";
+
+import { ShotList } from "./styles";
+import Shot from "../../components/Shot";
 
 class Main extends Component {
   componentDidMount() {
@@ -10,7 +13,15 @@ class Main extends Component {
   }
 
   render() {
-    return <Fragment>oi</Fragment>;
+    return (
+      <ShotList>
+        <Shot />
+        <Shot />
+        <Shot />
+        <Shot />
+        <Shot />
+      </ShotList>
+    );
   }
 }
 
