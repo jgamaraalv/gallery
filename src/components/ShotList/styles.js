@@ -12,6 +12,10 @@ export const Shot = styled.li`
   margin: 1rem;
   width: calc(25% - 2rem);
   position: relative;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 
   a {
     display: block;

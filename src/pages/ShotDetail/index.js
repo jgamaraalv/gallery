@@ -33,6 +33,7 @@ class ShotDetail extends Component {
                 ))}
               </ul>
               <p className="shot-date">
+                <i className="fas fa-calendar-week" />
                 <i>Publicado em:</i>
                 {moment(shot.published_at).format("DD/MM/YYYY")}
               </p>
