@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 
 import ShotsActions from "../../store/ducks/shots";
 
+import Loader from "../../components/Loader";
 import ShotList from "../../components/ShotList";
 
 class Main extends Component {
@@ -12,13 +13,14 @@ class Main extends Component {
   }
 
   render() {
-    const { shots } = this.props;
-    return <ShotList shots={shots} />;
+    const { shots, loading } = this.props;
+    return loading ? <Loader /> : <ShotList shots={shots} />;
   }
 }
 
 const mapStateToProps = state => ({
-  shots: state.shots.shots
+  shots: state.shots.shots,
+  loading: state.shots.loading
 });
 
 const mapDispatchToProps = dispatch =>

@@ -25,11 +25,13 @@ export const INITIAL_STATE = Immutable({
 
 export const getShots = state => state.merge({ loading: true });
 
-export const getShotsSuccess = (state, { shots }) => state.merge({ shots });
+export const getShotsSuccess = (state, { shots }) =>
+  state.merge({ shots, loading: false });
 
 export const getShot = state => state.merge({ shot: {}, loading: true });
 
-export const getShotSuccess = (state, { shot }) => state.merge({ shot });
+export const getShotSuccess = (state, { shot }) =>
+  state.merge({ shot, loading: false });
 
 /* Reducers to types */
 

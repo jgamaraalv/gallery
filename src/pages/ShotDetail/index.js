@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import moment from "moment";
@@ -6,6 +6,7 @@ import moment from "moment";
 import ShotsActions from "../../store/ducks/shots";
 
 import { Container } from "./styles";
+import Loader from "../../components/Loader";
 
 class ShotDetail extends Component {
   componentDidMount() {
@@ -14,30 +15,36 @@ class ShotDetail extends Component {
   }
 
   render() {
-    const { shot } = this.props;
+    const { shot, loading } = this.props;
     return (
       <Container>
         <div className="shot-content">
-          <h1>{shot.title}</h1>
-          <div
-            className="shot-description"
-            dangerouslySetInnerHTML={{ __html: shot.description }}
-          />
-          <img src={shot.images && shot.images.two_x} alt={shot.title} />
-          {shot.tags && shot.tags.length > 0 && (
-            <div className="flex">
-              <i className="fas fa-tags" />
-              <ul className="tags">
-                {shot.tags.map((tag, index) => (
-                  <li key={`tag-${index}`}>{tag}</li>
-                ))}
-              </ul>
-              <p className="shot-date">
-                <i className="fas fa-calendar-week" />
-                <i>Publicado em:</i>
-                {moment(shot.published_at).format("DD/MM/YYYY")}
-              </p>
-            </div>
+          {loading ? (
+            <Loader />
+          ) : (
+            <Fragment>
+              <h1>{shot.title}</h1>
+              <div
+                className="shot-description"
+                dangerouslySetInnerHTML={{ __html: shot.description }}
+              />
+              <img src={shot.images && shot.images.two_x} alt={shot.title} />
+              {shot.tags && shot.tags.length > 0 && (
+                <div className="flex">
+                  <i className="fas fa-tags" />
+                  <ul className="tags">
+                    {shot.tags.map((tag, index) => (
+                      <li key={`tag-${index}`}>{tag}</li>
+                    ))}
+                  </ul>
+                  <p className="shot-date">
+                    <i className="fas fa-calendar-week" />
+                    <i>Publicado em:</i>
+                    {moment(shot.published_at).format("DD/MM/YYYY")}
+                  </p>
+                </div>
+              )}
+            </Fragment>
           )}
         </div>
       </Container>
@@ -46,7 +53,8 @@ class ShotDetail extends Component {
 }
 
 const mapStateToProps = state => ({
-  shot: state.shots.shot
+  shot: state.shots.shot,
+  loading: state.shots.loading
 });
 
 const mapDispatchToProps = dispatch =>
