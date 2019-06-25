@@ -1,5 +1,5 @@
 {
-  "name": "2k19-react",
+  "name": "Gallery",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -33,5 +33,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "redux-mock-store": "^1.5.3"
+  }
 }
