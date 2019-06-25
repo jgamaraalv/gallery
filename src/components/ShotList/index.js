@@ -11,7 +11,7 @@ const ShotList = ({ shots }) => (
           <NavLink to={`/shots/${shot.id}`}>
             <img src={shot.images.normal} alt={shot.title} />
           </NavLink>
-          <div className="shot-title">{shot.title}</div>
+          <p className="shot-title">{shot.title}</p>
         </Shot>
       ))}
   </Container>
