@@ -2,9 +2,17 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   padding: 2rem;
   align-items: center;
   justify-content: center;
+
+  a {
+    margin-top: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: #4dabf7;
+  }
 
   .shot-content {
     padding: 2rem;

@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import moment from "moment";
+import { NavLink } from "react-router-dom";
 
 import ShotsActions from "../../store/ducks/shots";
 
@@ -47,6 +48,9 @@ class ShotDetail extends Component {
             </Fragment>
           )}
         </div>
+        <NavLink to={`/`}>
+          <i className="fas fa-arrow-circle-left" /> Voltar para a listagem
+        </NavLink>
       </Container>
     );
   }
