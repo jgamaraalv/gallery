@@ -27,7 +27,7 @@ export const getShots = state => state.merge({ loading: true });
 
 export const getShotsSuccess = (state, { shots }) => state.merge({ shots });
 
-export const getShot = state => state.merge({ loading: true });
+export const getShot = state => state.merge({ shot: {}, loading: true });
 
 export const getShotSuccess = (state, { shot }) => state.merge({ shot });
 
