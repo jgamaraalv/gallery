@@ -4,21 +4,22 @@ import { bindActionCreators } from "redux";
 
 import ShotsActions from "../../store/ducks/shots";
 
-import ShotList from "../../components/ShotList";
+import { Container } from "./styles";
 
-class Main extends Component {
+class ShotDetail extends Component {
   componentDidMount() {
-    this.props.getShots();
+    const id = this.props.match.params.id;
+    this.props.getShot(id);
   }
 
   render() {
-    const { shots } = this.props;
-    return <ShotList shots={shots} />;
+    const { shot } = this.props;
+    return <Container>{shot.title}</Container>;
   }
 }
 
 const mapStateToProps = state => ({
-  shots: state.shots.shots
+  shot: state.shots.shot
 });
 
 const mapDispatchToProps = dispatch =>
@@ -32,4 +33,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Main);
+)(ShotDetail);

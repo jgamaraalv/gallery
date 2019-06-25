@@ -7,7 +7,18 @@ export function* getShots() {
   try {
     const response = yield call(api.get, `user/shots`);
 
-    yield put(ShotsActions.getShotsSuccess(response));
+    yield put(ShotsActions.getShotsSuccess(response.data));
+  } catch (err) {
+    // TODO
+    console.log(err);
+  }
+}
+
+export function* getShot({ id }) {
+  try {
+    const response = yield call(api.get, `shots/${id}`);
+
+    yield put(ShotsActions.getShotSuccess(response.data));
   } catch (err) {
     // TODO
     console.log(err);
