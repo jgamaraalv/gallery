@@ -1,5 +1,3 @@
-## BitcoinTrade test
-
 A simple gallery in React using dribbble API
 
 In the project directory, you can run:
